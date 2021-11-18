@@ -1,6 +1,6 @@
 
 import Header from './header';
-import Footer from './footer';
+import Footer from './Footer';
 
 export const siteTitle = 'Dimas NA - Blogfolio';
 

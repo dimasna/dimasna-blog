@@ -1,4 +1,4 @@
-import MenuItem from './menuItem'
+import MenuItem from './MenuItem'
 export default function Header(){
     return (
         <div className="flex justify-between px-4 py-3 h-auto shadow-xl ">
