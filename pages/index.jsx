@@ -15,7 +15,7 @@ export default function Home() {
       <section className="lg:px-44 md:px-12 xxs:px-2 -mt-8 xxs:-mt-16">
         <div className="flex items-baseline xxs:items-start xs:items-end xxs:px-0.5">
           <p className="text-8xl">👨‍💻</p>
-          <p className="text-4xl font-bold leading-none">Hi, I'm Dimas N Al<span >👋</span> </p>
+          <p className="text-4xl font-bold leading-none">Hi, I'm Dimas N Al </p>
         </div>
         <About>
           I’m fullstack javascript developer especially in NodeJS/React, but also experienced in Vue, NextJS, SailsJS, Python (Flask),
