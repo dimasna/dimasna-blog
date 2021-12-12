@@ -1,9 +1,9 @@
 import Icon from './Icon';
-export default function Chip({iconName, text, background, textColor}){
+export default function Chip({iconName, text, background = '#F2F2F2', textColor = '#222'}){
     return (
-        <div style={{backgroundColor: 'gray'}}>
-            {iconName && <Icon name={iconName} width={14} height={14} />}
-            <p>{text}</p>
+        <div className="flex items-center px-2 rounded w-min" style={{backgroundColor: background}}>
+            {iconName && <Icon className="mr-1" name={iconName} width={14} height={14} />}
+            <p className="mb-0.5 text-sm" style={{color: textColor}}>{text}</p>
         </div>
     )
 }

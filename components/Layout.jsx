@@ -9,7 +9,7 @@ export default function Layout({ children, home }) {
         <div>
             <Header />
             <main>{children}</main>
-            <Footer />
+            <Footer text="Made by Dimas N Al who ❤️ code and design." />
         </div>
     )
 }
