@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+import '../styles.css'
 import '../stories/assets/feather-sprite.svg'
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
