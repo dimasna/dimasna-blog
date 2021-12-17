@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/Layout'
-import Bio from '../components/Bio'
-import TitleContentBar from '../components/TitleContentBar'
-import Card from '../components/Card'
-import CardContainer from '../components/CardContainer'
-import PostModal from '../components/PostModal'
+import { useState } from 'react';
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/Layout';
+import Bio from '../components/Bio';
+import TitleContentBar from '../components/TitleContentBar';
+import Card from '../components/Card';
+import CardContainer from '../components/CardContainer';
+import PostModal from '../components/PostModal';
+import { getPosts } from '../services';
 
-export default function Home() {
+export default function Home({ posts }) {
   const [showPostModal, setShowPostModal] = useState(false)
-  const updateShow = ()=>{
-   
-      
+  const updateShow = () => {
+
+
     setShowPostModal(!showPostModal);
-    console.log('s'+showPostModal)
-  }  
+    
+  }
 
   return (
     <Layout>
@@ -33,13 +34,28 @@ export default function Home() {
           PHP (Laravel), Java, C++ (Arduino) and deploy it to cloud platform such as AWS, GCP and Azure (Serverless). Beside code,
           I also hands on UI/UX design. In my spare time I usually watch movie/anime."/>
         <TitleContentBar />
-        <PostModal isShow={showPostModal} setShow={setShowPostModal}/>
+        <PostModal isShow={showPostModal} setShow={setShowPostModal} />
         <CardContainer col="3">
-          <Card category="Career" action={updateShow} date="29-11-2021" title="Front End Engineer" stack={['Vue', 'Vuex']} imgUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--dcq3duqU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zbkjdro8kbqow4318lcq.png" />
-          <Card category="Career" action={updateShow} date="29-11-2021" title="Front End Engineer" stack={['Vue', 'Vuex']} imgUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--dcq3duqU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zbkjdro8kbqow4318lcq.png" />
-          <Card category="Career" action={updateShow} date="29-11-2021" title="Front End Engineer" stack={['Vue', 'Vuex']} imgUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--dcq3duqU--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zbkjdro8kbqow4318lcq.png" />
+          {
+            posts.map((item, index) => {
+              console.log(item.node)
+              const { name: categoryName, slug: categorySlug } = item.node.category;
+              const { url: featuredImageUrl } = item.node.featuredImage;
+              const { title, technologies, description, slug, createdAt } = item.node;
+              return <Card key={index} category={categoryName} action={updateShow} date={createdAt} title={title} stack={technologies} imgUrl={featuredImageUrl} />
+            })
+          }
+
         </CardContainer>
       </section>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+ // console.log(posts)
+  return {
+    props: { posts }
+  }
 }
