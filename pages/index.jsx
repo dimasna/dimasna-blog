@@ -37,6 +37,7 @@ export default function Home({ posts }) {
         <PostModal isShow={showPostModal} setShow={setShowPostModal} />
         <CardContainer col="3">
           {
+            
             posts.map((item, index) => {
               console.log(item.node)
               const { name: categoryName, slug: categorySlug } = item.node.category;
