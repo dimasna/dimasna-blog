@@ -3,10 +3,10 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout';
 import Bio from '../components/Bio';
 import TitleContentBar from '../components/TitleContentBar';
-import Card from '../components/Card';
 import CardContainer from '../components/CardContainer';
 import PostModal from '../components/PostModal';
-import { getPosts } from '../services';
+import { GET_ALL_POSTS } from '../graphQL/Query';
+import client from '../apolloClient';
 
 export default function Home({ posts }) {
   const [showPostModal, setShowPostModal] = useState(false)
@@ -14,7 +14,7 @@ export default function Home({ posts }) {
 
 
     setShowPostModal(!showPostModal);
-    
+
   }
 
   return (
@@ -35,28 +35,15 @@ export default function Home({ posts }) {
           I also hands on UI/UX design. In my spare time I usually watch movie/anime."/>
         <TitleContentBar />
         <PostModal isShow={showPostModal} setShow={setShowPostModal} />
-        <CardContainer col="3">
-          {
-            
-            posts.map((item, index) => {
-              console.log(item.node)
-              const { name: categoryName, slug: categorySlug } = item.node.category;
-              const { url: featuredImageUrl } = item.node.featuredImage;
-              const { title, technologies, description, slug, createdAt } = item.node;
-              return <Card key={index} category={categoryName} action={updateShow} date={createdAt} title={title} stack={technologies} imgUrl={featuredImageUrl} />
-            })
-          }
-
-        </CardContainer>
+        <CardContainer posts={posts} updateShow={updateShow}/>
       </section>
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
- // console.log(posts)
-  return {
-    props: { posts }
+  const { data } = await client.query({ query: GET_ALL_POSTS }) || [];
+  return { 
+    props: { posts: data.postsConnection.edges }
   }
 }
