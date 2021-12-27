@@ -3,7 +3,7 @@ import Chip from "./Chip";
 import moment from "moment";
 export default function Card({ imgUrl, title, category, stack, date, action }) {
     return (
-        <div className="flex flex-col flex-1 hover:bg-gray-100 cursor-pointer ring-gray-50 border rounded shadow min-w-50 max-w-40" onClick={() => action()}>
+        <div className="flex flex-col flex-1 hover:bg-gray-100 cursor-pointer ring-gray-50 border rounded shadow min-w-50 sm:max-w-40 md:max-w-40" onClick={() => action()}>
             <img className="object-cover rounded-t min-h-40" src={imgUrl} />
             <div className="py-2 px-3">
                 <Text type="title" value={title} />

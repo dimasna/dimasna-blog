@@ -10,11 +10,14 @@
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "feather-icons": "^4.28.0",
+    "fs": "^0.0.1-security",
     "moment": "^2.29.1",
     "next": "latest",
-    "next-mdx-remote": "^3.0.8",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-remark": "^2.0.3",
+    "remark-breaks": "^3.0.2",
+    "remark-html": "^15.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

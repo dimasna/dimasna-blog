@@ -7,7 +7,9 @@ export default function Bio({ text }) {
             <p className="flex xxs:flex sm:hidden">
                 <ReadMore text={text} maxChar={100}/>
             </p>
-            <p className="text-justify flex xxs:hidden sm:flex">{text}</p>
+            <p className="text-justify flex xxs:hidden sm:flex">
+                <ReadMore text={text} maxChar={300}/>
+            </p>
         </div>
     )
 }

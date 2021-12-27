@@ -24,6 +24,13 @@ export const GET_ALL_POSTS = gql`
           }
         }      
       `
+export const GET_ALL_SLUG = gql`
+      query GetAllSlug {
+          posts {
+            slug
+          }
+        }      
+      `
 export const GET_POST_DETAILS = gql`
       query GetPostDetails($slug: String!) {
         post(where: {slug: $slug}){
@@ -42,9 +49,7 @@ export const GET_POST_DETAILS = gql`
                 featuredImage {
                   url
                 }
-                content {
-                  markdown
-                }
+                content
               }
             }      
       `
