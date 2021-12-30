@@ -13,7 +13,7 @@ import Head from 'next/head'
 const Post = ({ post }) => {
     const hasMounted = useHasMounted();
     const [reactContent, setMarkdownSource] = useRemark({ remarkPlugins: [remarkBreaks, remarkHtml] });
-
+    console.log('slug'+JSON.stringify(post))
 
     useEffect(() => {
 
@@ -30,7 +30,7 @@ const Post = ({ post }) => {
         </title>
       </Head>
         <div className="py-20 xl:px-80 lg:px-60 md:px-30 sm:px-20 xxs:px-4">
-            <Content data={post} loading={false} error={false} reactContent={reactContent} />
+             <Content data={post} loading={false} error={false} reactContent={reactContent}/>
         </div>
     </Layout>
     )
