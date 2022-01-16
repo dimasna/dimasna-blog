@@ -8,7 +8,7 @@ if(error)return <p>{error}</p>
             <div>
                 <h2 className="text-2xl leading-6 font-medium text-gray-900">{data?.post && data.post.title}</h2>
                 <div className="mt-4">
-                    <Chip iconName={data?.post && typeIcon[data.post.category.slug]} text={data?.post && data.post.category.name} />
+                    {data?.post && <Chip iconName={typeIcon[data.post.category.slug]} text={data.post.category.name} />}
                 </div>
                 <hr className="mt-4" />
                 <div className="mt-2 py-3">
