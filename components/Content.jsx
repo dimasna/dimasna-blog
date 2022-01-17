@@ -1,8 +1,9 @@
 import typeIcon from "../typeIcon";
 import Chip from "./Chip";
+import Loading from "./Loading";
 export default function Content({data, loading, error, reactContent}){
 console.log('content'+JSON.stringify(data))
-if(loading)return <p>loading...</p>;
+if(loading)return <div className="text-center" ><Loading/></div>;
 if(error)return <p>{error}</p>
     return(
             <div>

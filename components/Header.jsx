@@ -1,3 +1,4 @@
+import Button from './Button'
 import Menu from './Menu'
 import MenuItem from './MenuItem'
 export default function Header() {
@@ -6,12 +7,14 @@ export default function Header() {
             <a href="/" >
             <div>👨‍💻<span className="font-bold cursor-pointer"> dimasna.com</span></div>
             </a>
-
+            <div className="flex">
+            <Button iconName="sun" variant="nobg" size="small"></Button>
             <Menu>
                 <MenuItem title="Linkedin" icon="linkedin" link="https://linkedin.com/in/dimasna" />
                 <MenuItem title="Github" icon="github" link="https://github.com/dimasna" />
                 <MenuItem title="Dribbble" icon="dribbble" link="https://dribbble.com/dimasna" />
             </Menu>
+            </div>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import PostModal from '../components/PostModal';
 import { GET_ALL_POSTS} from '../graphQL/Query';
 import client from '../apolloClient';
 import usePagination from '../hooks/usePagination';
+import Loading from '../components/Loading';
 
 
 export default function Home({ postlists }) {
@@ -83,8 +84,7 @@ export default function Home({ postlists }) {
         <TitleContentBar options={options} selectTitle={selectTitle} setSelectTitle={setSelectTitle}/>
         <PostModal isShow={showPostModal} setShow={setShowPostModal} slug={slug} />
         <CardContainer posts={currentPosts} updateShow={updateShow} setSlug={setSlug} />
-        {currentPage !== maxPage && <h1 className="text-center" ref={setElement}>Loading Posts...</h1>
-       }
+        {currentPage !== maxPage && <div className="text-center" ref={setElement}><Loading/></div>}
       </section>
     </Layout>
   )

@@ -34,5 +34,11 @@ Flat.args = {
   variant: 'flat',
 
 };
+export const Outline = Template.bind({});
+Outline.args = {
+  children: 'Outline',
+  variant: 'outline',
+
+};
 
 

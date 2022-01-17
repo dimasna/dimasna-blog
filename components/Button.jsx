@@ -14,7 +14,9 @@ const classes = {
         primary: 'bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white',
         secondary: 'bg-gray-200 hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white',
         danger: 'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white',
-        flat: 'hover:bg-gray-200 text-gray-500'
+        flat: 'hover:bg-gray-200 text-gray-500',
+        nobg: 'text-gray-500',
+        outline: 'border-2 border-gray-500 text-gray-700'
     }
 }
 const Button = forwardRef(
@@ -45,7 +47,7 @@ const Button = forwardRef(
             `)}
             {...props}
         >
-            {iconName && <Icon className="mr-1 inline" name={iconName} width={14} height={14} />}
+            {iconName && <Icon className="mr-1 mb-0.5 inline" name={iconName} width={14} height={14} />}
             {children}
         </button>
     ));
