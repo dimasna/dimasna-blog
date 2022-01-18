@@ -15,8 +15,8 @@ const classes = {
         secondary: 'bg-gray-200 hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white',
         danger: 'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white',
         flat: 'hover:bg-gray-200 text-gray-500',
-        nobg: 'text-gray-500',
-        outline: 'border-2 border-gray-500 text-gray-700'
+        nobg: 'text-black',
+        outline: 'border-2 border-gray-500 hover:bg-gray-100 text-gray-700'
     }
 }
 const Button = forwardRef(

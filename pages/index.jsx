@@ -14,18 +14,19 @@ import Loading from '../components/Loading';
 export default function Home({ postlists }) {
   const [showPostModal, setShowPostModal] = useState(false);
   const [selectTitle, setSelectTitle] = useState('Show All');
+  const [sortedBy, setSortedBy] = useState('Latest');
   const options = ["Show All", "Career", "Project", "Achievement", "Community", "Blog Post"];
   const { next, currentPage, currentData, maxPage } = usePagination(
     postlists,
     selectTitle,
+    sortedBy,
     4
   );
   const [slug, setSlug] = useState('');
 
 
   const updateShow = () => {
-    console.log('url'+slug)
-    // setSlug(url);
+    console.log('url'+slug);
     setShowPostModal(!showPostModal);
   }
 
@@ -81,7 +82,7 @@ export default function Home({ postlists }) {
         <Bio text="I’m fullstack javascript developer expertise in NodeJS/React also experienced in NextJS, GraphQL, Restful API, Python (Flask),
           PHP (Laravel), Java, C++ (Arduino) and deploy it to cloud platform such as AWS, GCP and Azure (Serverless). Beside code,
           I also hands on UI/UX design. I won some international and national Hackathon competition. In my spare time I usually watch movie/anime."/>
-        <TitleContentBar options={options} selectTitle={selectTitle} setSelectTitle={setSelectTitle}/>
+        <TitleContentBar options={options} selectTitle={selectTitle} setSelectTitle={setSelectTitle} sortedBy={sortedBy} setSortedBy={setSortedBy}/>
         <PostModal isShow={showPostModal} setShow={setShowPostModal} slug={slug} />
         <CardContainer posts={currentPosts} updateShow={updateShow} setSlug={setSlug} />
         {currentPage !== maxPage && <div className="text-center" ref={setElement}><Loading/></div>}
