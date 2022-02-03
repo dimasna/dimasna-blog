@@ -60,10 +60,10 @@ export default function PostModal({ isShow, setShow, slug }) {
     //console.log('data'+JSON.stringify(data))
     return (
         <div ref={ref} className={`fixed ${isShow ? 'block' : 'hidden'} top-0 bottom-0 right-0 left-0 insert-0 bg-gray-600 bg-opacity-50 h-full w-full`} >
-            <div ref={cardRef} style={{ overflowY: 'overlay' }} className="relative flex flex-col overflow-x-hidden top-20 max-w-lg min-h-md max-h-md mx-auto shadow-lg rounded-md bg-white">
-                <div className="bg-white w-full max-w-lg">
+            <div ref={cardRef} style={{ overflowY: 'overlay' }} className="relative flex flex-col overflow-x-hidden top-20 max-w-lg min-h-md max-h-md mx-auto shadow-lg rounded-md dark:bg-lightdark bg-white">
+                <div className="bg-white dark:bg-lightdark w-full max-w-lg">
                     <a href={`/post/${slug}`}>
-                        <Button className="m-2" variant="flat" size="small" iconName="maximize-2" >Open as page</Button>
+                        <Button className="m-2 dark:hover:bg-gray-800" variant="flat" size="small" iconName="maximize-2" >Open as page</Button>
                     </a>
 
                 </div>
