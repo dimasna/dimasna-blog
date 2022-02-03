@@ -4,7 +4,7 @@ import moment from "moment";
 import typeIcon from "../typeIcon";
 export default function Card({ post, action }) {
     return (
-        <div className="flex xxs:basis-full sm:basis-48  md:basis-48 lg:basis-48 xl:basis-25 flex-col hover:bg-gray-100 cursor-pointer ring-gray-50 border rounded shadow lg:max-w-55 xl:max-w-51 2xl:max-w-52" onClick={() => action()}>
+        <div className="flex xxs:basis-full sm:basis-48  md:basis-48 lg:basis-48 xl:basis-25 flex-col dark:bg-lightdark hover:bg-gray-100 cursor-pointer ring-gray-50 dark:border-gray-700 dark:hover:bg-gray-800 border rounded shadow lg:max-w-55 xl:max-w-51 2xl:max-w-52" onClick={() => action()}>
 
             <img className="h-40 object-cover rounded-t" src={post.featuredImage.url} />
 

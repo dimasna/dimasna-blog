@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { cls } from '../helper/cls';
 import Icon from './Icon';
 const classes = {
-    base: 'focus:outline-none transition ease-in-out duration-300',
+    base: 'focus:outline-none transition ease-in-out duration-300 flex items-center dark:text-gray-300',
     disabled: 'opacity-50 cursor-not-allowed',
     pill: 'rounded',
     size: {
@@ -16,7 +16,7 @@ const classes = {
         danger: 'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white',
         flat: 'hover:bg-gray-200 text-gray-500',
         nobg: 'text-black',
-        outline: 'border-2 border-gray-500 hover:bg-gray-100 text-gray-700'
+        outline: 'border-2 border-gray-500 hover:bg-gray-100 text-gray-700 dark:hover:bg-lightdark'
     }
 }
 const Button = forwardRef(
@@ -47,7 +47,7 @@ const Button = forwardRef(
             `)}
             {...props}
         >
-            {iconName && <Icon className="mr-1 mb-0.5 inline" name={iconName} width={14} height={14} />}
+            {iconName && <Icon className="mr-1 inline dark:stroke-gray-400 stroke-gray-500"  name={iconName} width={14} height={14} />}
             {children}
         </button>
     ));

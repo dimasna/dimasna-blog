@@ -3,8 +3,14 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
+    extend:{
+      colors:{
+      'darkbg': '#0d1117',
+      'lightdark': '#161b22'
+      }
+    },
     flexBasis: {
       '25': '25%',
       '33': '33.33%',
@@ -27,7 +33,7 @@ module.exports = {
       '50': '15rem',
       '51': '16rem',
       '52': '17.35rem',
-      '55': '20rem',
+      '55': '21rem',
       'lg': '58rem',
     },
     minHeight: {
