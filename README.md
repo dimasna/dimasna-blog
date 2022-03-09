@@ -28,19 +28,19 @@ This repository is packed with:
 ### 1. Clone this repo:
 
  ```bash
-   git clone https://github.com/dimasna/dimasna-blog.git
+ git clone https://github.com/dimasna/dimasna-blog.git
  ```
  
 ### 2. Install dependencies:
 
 ```bash
-   npm install
+npm install
  ```
  
 ### 3. Run development server:
 
 ```bash
-   npm run dev
+npm run dev
  ```
  Open [http://localhost:3000](http://localhost:3000) with your browser to see the page.
 
@@ -48,12 +48,12 @@ This repository is packed with:
 
 command to run unit testing :
 ```bash
-   npm run test
+npm run test
  ```
  
 command to run Storybook :
 ```bash
-   npm run storybook
+npm run storybook
  ```
  
 
