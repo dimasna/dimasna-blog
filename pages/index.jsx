@@ -5,7 +5,7 @@ import Bio from '../components/Bio';
 import TitleContentBar from '../components/TitleContentBar';
 import CardContainer from '../components/CardContainer';
 import PostModal from '../components/PostModal';
-import { GET_ALL_POSTS} from '../graphQL/Query';
+import { GET_ALL_POSTS} from '../graphQL/query';
 import client from '../apolloClient';
 import usePagination from '../hooks/usePagination';
 import Loading from '../components/Loading';

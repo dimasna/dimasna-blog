@@ -6,7 +6,7 @@ import remarkHtml from "remark-html";
 import useHasMounted from "../../hooks/useHasMounted";
 import Button from "../Button";
 import Content from "../Content";
-import { GET_POST_DETAILS } from "../../graphQL/Query";
+import { GET_POST_DETAILS } from "../../graphQL/query";
 
 export default function PostModal({ isShow, setShow, slug }) {
     const ref = useRef(null);

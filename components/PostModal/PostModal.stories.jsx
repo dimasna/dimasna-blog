@@ -1,7 +1,7 @@
 import React from 'react';
 import PostModal from '.';
 import { useArgs } from '@storybook/client-api';
-import { GET_POST_DETAILS } from '../../graphQL/Query';
+import { GET_POST_DETAILS } from '../../graphQL/query';
 import { MockedProvider } from '@apollo/client/testing';
 export default {
   title: 'Components/PostModal',
