@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import '../styles.css'
-import '../stories/assets/feather-sprite.svg'
+import '../public/feather-sprite.svg'
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -8,5 +9,5 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-  },
+  }
 }

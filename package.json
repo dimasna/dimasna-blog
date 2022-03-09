@@ -4,6 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "jest --watchAll --verbose",
     "storybook": "start-storybook -p 6006 --no-manager-cache --no-dll -s ./public",
     "build-storybook": "build-storybook"
   },
@@ -26,9 +27,18 @@
     "@storybook/addon-links": "^6.3.12",
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.3.12",
+    "@testing-library/dom": "^8.11.3",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
     "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "jest": "^27.5.1",
+    "jest-dom": "^4.0.0",
     "postcss": "^8.4.5",
+    "storybook-addon-apollo-client": "^4.0.11",
     "storybook-addon-state": "^1.0.3",
     "tailwindcss": "^3.0.7"
   }
