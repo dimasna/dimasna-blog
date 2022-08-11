@@ -39,13 +39,14 @@ export default function Home({ postlists }) {
       (entries) => {
         const firstEntry = entries[0];
         const y = firstEntry.boundingClientRect.y;
-
-        if (prevY.current > y) {
+        console.log(prevY.current)
+        console.log(y)
+        if (prevY.current > y || prevY.current == 0 && currentPage != maxPage) {
           next();
         }
         prevY.current = y;
       },
-      { threshold: 0.5 }
+      { threshold: 1 }
     );
   }, []);
 
@@ -72,7 +73,7 @@ export default function Home({ postlists }) {
         </title>
       </Head>
       <div className="flex h-32 dark:hidden bg-gradient-to-b from-gray-100"></div>
-      <section className="lg:px-44 md:px-12 xxs:px-2 -mt-8 xxs:-mt-16 dark:bg-darkbg dark:pt-32">
+      <section className="lg:px-44 md:px-12 xxs:px-2 -mt-8 xxs:-mt-16 dark:bg-darkbg dark:pt-32 max-w-[114em] m-auto">
         <div className="flex items-baseline xxs:items-start xs:items-end xxs:px-0.5 mt-6">
           <p className="text-8xl">👨‍💻</p>
           <p className="text-4xl font-bold leading-none dark:text-white">Hi, I'm Dimas N Al </p>
