@@ -1,7 +1,6 @@
 import Header from '../Header';
 import Footer from '../Footer';
 
-export const siteTitle = 'Dimas NA - Blogfolio';
 
 export default function Layout({ children, home }) {
     return (

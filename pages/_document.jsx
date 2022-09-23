@@ -9,11 +9,16 @@ class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Head />
+                <Head>
+                    <meta charSet="utf-8" />
+                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <link rel="icon" type="image/png" href="/favicon.ico" />
+                    <meta name="robots" content="index, follow" />
+                </Head>
                 <body className="bg-white dark:bg-darkbg">
                     <Main />
                     <NextScript />
-                
+
                 </body>
             </Html>
         )
