@@ -40,7 +40,7 @@ export default function Select({ options, value, setValue }) {
                     </p>
 
                 </div>
-                {showDropDown && <ul className="mt-1 w-max bg-white absolute shadow-lg rounded border border-gray-200 dark:bg-lightdark dark:border-gray-600">
+                {showDropDown && <ul className="mt-1 w-max bg-white absolute shadow-lg rounded border border-gray-200 dark:bg-lightdark dark:border-gray-600 z-10">
                     {opts.map((val, idx) => {
                         return <li className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 dark:text-gray-400 cursor-pointer" key={idx} onClick={()=>changeOption(val)}>{val}</li>
                     })}

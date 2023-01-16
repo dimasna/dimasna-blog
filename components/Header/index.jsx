@@ -5,7 +5,7 @@ import useDarkMode from '../../hooks/useDarkMode';
 export default function Header() {
     const [colorTheme, setTheme] = useDarkMode();
     const changeTheme = (theme) => {
-        console.log(theme);
+        // console.log(theme);
         setTheme(theme)
     }
     return (
