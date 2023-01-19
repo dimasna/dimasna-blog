@@ -18,6 +18,7 @@ export const GET_ALL_POSTS = gql`
                 createdAt
                 featuredImage {
                   url
+                  fileName
                 }
               }
             }
@@ -48,6 +49,7 @@ export const GET_POST_DETAILS = gql`
                 createdAt
                 featuredImage {
                   url
+                  fileName
                 }
                 content
               }

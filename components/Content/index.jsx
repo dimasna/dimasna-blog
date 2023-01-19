@@ -20,6 +20,7 @@ export default function Content({ data, loading, error, reactContent }) {
                             layout="fill"
                             objectFit="contain"
                             src={data.post.featuredImage.url}
+                            alt={data.post.featuredImage.fileName.split('.')[0] || data.post.featuredImage.id}
                         />
                     }
                 </div>

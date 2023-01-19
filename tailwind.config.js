@@ -1,4 +1,4 @@
-const { height } = require('tailwindcss/defaultTheme')
+
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -57,6 +57,7 @@ module.exports = {
         },
       }
       addUtilities(extendUnderline)
-    }
+    },
+    require("@plaiceholder/tailwindcss")
   ],
 }
