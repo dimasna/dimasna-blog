@@ -38,7 +38,8 @@ module.exports = {
     },
     minHeight: {
       '40': '10rem',
-      'md': '35rem'
+      'md': '35rem',
+      '16': '4rem'
     },
     maxHeight: {
       '40': '10rem',

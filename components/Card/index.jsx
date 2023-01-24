@@ -5,7 +5,7 @@ import typeIcon from "../../typeIcon";
 import Image from 'next/image'
 export default function Card({ post, action }) {
     return (
-        <div className="grid xxs:basis-full sm:basis-48  md:basis-48 lg:basis-25 xl:basis-25 grid-rows-2 dark:bg-lightdark hover:bg-gray-100 cursor-pointer ring-gray-50 dark:border-gray-700 dark:hover:bg-gray-800 border rounded shadow" onClick={() => action()}>
+        <div className="xxs:basis-full sm:basis-48  md:basis-48 lg:basis-25 xl:basis-25 dark:bg-lightdark hover:bg-gray-100 cursor-pointer ring-gray-50 dark:border-gray-700 dark:hover:bg-gray-800 border rounded shadow" onClick={() => action()}>
             <div className="h-40 rounded-t relative " >
 
                 <Image
@@ -19,11 +19,11 @@ export default function Card({ post, action }) {
             </div>
 
 
-            <div className="flex flex-col py-2 px-3 justify-between" >
-                <div>
+            <div className="flex flex-col py-2 px-3" >
+                <div className="min-h-16">
                     <Text type="date" value={moment(post.createdAt).format('MMM DD, YYYY')} />
 
-                    <Text type="title" value={post.title} />
+                    <Text type="title" value={post.title} maxChar={50} />
                 </div>
                 <div className="mt-4">
                     <Chip iconName={typeIcon[post.category.slug]} text={post.category.name} />
